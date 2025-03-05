@@ -172,6 +172,23 @@ class AddressBookApp {
         console.log("Address book sorted by name:", this.addressBooks);
     }
     
+
+
+    sortBy(field) {
+        if (!["city", "state", "zip"].includes(field)) {
+            console.error("Invalid sort field. Choose 'city', 'state', or 'zip'.");
+            return;
+        }
+    
+        Object.keys(this.addressBooks).forEach(bookName => {
+            this.addressBooks[bookName].sort((a, b) => 
+                a[field].toString().localeCompare(b[field].toString())
+            );
+        });
+    
+        console.log(`Address book sorted by ${field}:`, this.addressBooks);
+    }
+    
 }
 
 // Example Usage
@@ -189,7 +206,13 @@ app.addContact("Personal", "John", "Doe", "123 Main St", "New York", "Nwq idhhd"
 // app.searchByCityOrState("California");
 app.addContact("Work", "Vinay", "Jadaun", "456 Market St", "New Jersery", "New jersey", "90001", "9123456789", "alice.smith@example.com");
 app.searchByCityOrState("New York");
-app.sortByName();
+// app.sortByName();
+app.sortBy("zip")
+
+
+
+
+
 
 
 
