@@ -2,11 +2,11 @@
   {
     "firstName": "John",
     "lastName": "Doe",
-    "address": "123 Street",
+    "address": "123 Main St",
     "city": "New York",
-    "state": "NY",
+    "state": "NEW YORK",
     "zip": "10001",
     "phone": "9876543210",
-    "email": "john@example.com"
+    "email": "john.doe@example.com"
   }
 ]
