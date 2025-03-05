@@ -159,6 +159,19 @@ class AddressBookApp {
             console.log(`Contacts in '${cityOrState}':`, results);
         }
     }
+
+
+
+    sortByName() {
+        Object.keys(this.addressBooks).forEach(bookName => {
+            this.addressBooks[bookName].sort((a, b) => 
+                a.name.toLowerCase().localeCompare(b.name.toLowerCase())
+            );
+        });
+    
+        console.log("Address book sorted by name:", this.addressBooks);
+    }
+    
 }
 
 // Example Usage
@@ -176,6 +189,7 @@ app.addContact("Personal", "John", "Doe", "123 Main St", "New York", "Nwq idhhd"
 // app.searchByCityOrState("California");
 app.addContact("Work", "Vinay", "Jadaun", "456 Market St", "New Jersery", "New jersey", "90001", "9123456789", "alice.smith@example.com");
 app.searchByCityOrState("New York");
+app.sortByName();
 
 
 
