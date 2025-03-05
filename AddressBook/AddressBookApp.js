@@ -118,6 +118,18 @@ class AddressBookApp {
         this.saveAddressBooks();
         console.log(`Contact '${firstName} ${lastName}' updated successfully!`);
     }
+
+    countContacts(bookName) {
+        if (!this.addressBooks[bookName]) {
+            console.log(`Address Book '${bookName}' does not exist.`);
+            return 0;
+        }
+
+        // Use reduce function to count the contacts
+        const contactCount = this.addressBooks[bookName].reduce((count) => count + 1, 0);
+        console.log(`Total contacts in '${bookName}': ${contactCount}`);
+        return contactCount;
+    }
 }
 
 // Example Usage
@@ -130,6 +142,8 @@ app.addContact("Work", "Alice", "Smith", "456 Market St", "Berkhera pathani", "C
 app.viewContacts("Work");
 app.editContact("Work", "Alice", "Smith", { phone: "9876543211", email: "john.new@example.com" });
 app.deleteContact("Work","Alice","Smith");
+app.countContacts("Personal");
+
 
 
 
