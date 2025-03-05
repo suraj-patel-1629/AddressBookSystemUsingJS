@@ -175,7 +175,7 @@ app.countContacts("Personal");
 app.addContact("Personal", "John", "Doe", "123 Main St", "New York", "Nwq idhhd", "10001", "9876543210", "john.doe@example.com");
 // app.searchByCityOrState("California");
 app.addContact("Work", "Vinay", "Jadaun", "456 Market St", "New Jersery", "New jersey", "90001", "9123456789", "alice.smith@example.com");
-app.searchByCityOrState("New York")
+app.searchByCityOrState("New York");
 
 
 
